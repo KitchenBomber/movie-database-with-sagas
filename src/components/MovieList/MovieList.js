@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import MovieItem from "../MovieItem/MovieItem"
 
 
+
 export class MovieList extends Component {
 
     componentDidMount(){
@@ -16,9 +17,11 @@ export class MovieList extends Component {
              
                 {/* <p>{JSON.stringify(this.props.reduxState)}</p> */}
                 <table>
+                    <tbody>
                     {this.props.reduxState.movies.map(movieItem =>
                             <MovieItem movieItem={movieItem} />
                     )}
+                    </tbody>
                 </table>
                 
             </div>

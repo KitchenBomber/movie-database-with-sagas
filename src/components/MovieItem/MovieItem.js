@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { Link } from "react-router-dom";
 
 export class MovieItem extends Component {
    
 handleClick = () => {
     console.log("clicky click");
+    this.props.dispatch({type: "DETAILS", payload: this.props.movieItem.poster});
+    // this.props.history.push('/details')
     //route to details goes here
     
 }
@@ -14,8 +16,8 @@ handleClick = () => {
         return (
                <tr>
                 <td>
-                    <img src={this.props.movieItem.poster} onClick={this.handleClick}></img>
-                    
+                    <Link to="/details" ><img src={this.props.movieItem.poster} onClick={this.handleClick}></img>
+                    </Link>
                 </td>
            
                 <td>
