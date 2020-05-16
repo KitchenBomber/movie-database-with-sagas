@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
+import MovieList from '../MovieList/MovieList'
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ componentDidMount(){
       <div className="App">
         <p>Empty Page</p>
         <button onClick={this.clickHandler}>Click Me</button>
+        <MovieList/>
       </div>
     );
   }
