@@ -4,13 +4,17 @@ import { connect } from 'react-redux'
 
 export class MovieItem extends Component {
    
-
+handleClick = () => {
+    console.log("clicky click");
+    //route to details goes here
+    
+}
 
     render() {
         return (
                <tr>
                 <td>
-                    <img src={this.props.movieItem.poster}></img>
+                    <img src={this.props.movieItem.poster} onClick={this.handleClick}></img>
                     
                 </td>
            
