@@ -19,7 +19,7 @@ componentDidMount(){
   render() {
     return (
       <div className="App">
-        <p>Empty Page</p>
+        <h1>Blockbuster Video</h1>
         <button onClick={this.clickHandler}>Click Me</button>
         <MovieList/>
       </div>

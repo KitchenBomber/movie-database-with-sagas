@@ -8,19 +8,18 @@ export class MovieItem extends Component {
 
     render() {
         return (
-               <div>
-                <li >
-                    {this.props.movieItem.title}
-                </li>
-            <span>
-                <li>
+               <tr>
+                <td>
                     <img src={this.props.movieItem.poster}></img>
+                    
+                </td>
+           
+                <td>
+                    <h2>{this.props.movieItem.title}</h2>
                     <p>{this.props.movieItem.description}</p>
-                </li>
+                </td>
                    
-
-                </span>
-            </div>
+            </tr>
         )
     }
 }
