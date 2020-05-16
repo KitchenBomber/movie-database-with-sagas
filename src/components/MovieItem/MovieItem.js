@@ -3,11 +3,23 @@ import { connect } from 'react-redux'
 
 
 export class MovieItem extends Component {
+   
+
+
     render() {
         return (
-            <div>
-                <h3>in MovieItem</h3>
-                    {/* <li>{this.props.movies</li> */}
+               <div>
+                <li >
+                    {this.props.movieItem.title}
+                </li>
+            <span>
+                <li>
+                    <img src={this.props.movieItem.poster}></img>
+                    <p>{this.props.movieItem.description}</p>
+                </li>
+                   
+
+                </span>
             </div>
         )
     }

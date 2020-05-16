@@ -14,15 +14,13 @@ export class MovieList extends Component {
         return (
             <div>
                 <h3>in MovieList</h3>
-                <p>{JSON.stringify(this.props.reduxState)}</p>
+                {/* <p>{JSON.stringify(this.props.reduxState)}</p> */}
                 <ul>
-                    {this.props.reduxState.movies.map((movieItem)=>{
-                        return(
-                            <MovieItem movieItem={movieItem} reduxState={this.props.reduxState}/>
-                        )
-                    })}
+                    {this.props.reduxState.movies.map(movieItem =>
+                            <MovieItem movieItem={movieItem} />
+                    )}
                 </ul>
-                <MovieItem/>
+                
             </div>
         )
     }

@@ -27,7 +27,6 @@ function* fetchMovies(){
     try {
         let moviesResponse = yield axios.get('/api/movies');
         yield put({type: 'SET_MOVIES', payload: moviesResponse.data });
-        yield put({type: 'SET_GENRES', payload: moviesResponse.data })
     } catch(err) {
         console.log(err);
         
