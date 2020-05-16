@@ -5,6 +5,7 @@ export class Edit extends Component {
         return (
             <div>
                 <h3>Edit</h3>
+                <input type="text"></input>
             </div>
         )
     }

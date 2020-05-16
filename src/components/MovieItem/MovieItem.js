@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 export class MovieItem extends Component {
    
 handleClick = () => {
-    console.log("clicky click");
-    this.props.dispatch({type: "DETAILS", payload: this.props.movieItem.poster});
+
+    console.log("clicky click" );
+    this.props.dispatch({ type: "DETAILS", payload: { query: this.props.movieItem.title}});
     // this.props.history.push('/details')
     //route to details goes here
     
