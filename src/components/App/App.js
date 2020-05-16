@@ -7,8 +7,7 @@ class App extends Component {
 //component did mount will need to send "FETCH" messages
 componentDidMount(){
   console.log("didMount", this.props);
-  // this.props.dispatch({ type: 'SET_MOVIES'})
-  // this.props.dispatch({ type: 'SET_GENRES'})
+  this.props.dispatch({ type: 'FETCH_MOVIES'})
 }
 
   clickHandler = () => {

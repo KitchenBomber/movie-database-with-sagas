@@ -24,6 +24,7 @@ CREATE TABLE "linker"
 );
 
 
+
 --------[ DATA! ]---------
 
 -- starter movies
@@ -60,3 +61,23 @@ VALUES
 ('Science Fiction'),
 ('Space-Opera'),
 ('Superhero');
+
+-- linker data
+
+INSERT INTO "linker"
+  ("movie_id", "genre_id")
+VALUES
+  (1, 11),
+  (2, 9),
+  (3, 13),
+  (4, 2),
+  (5, 6),
+  (6, 8),
+  (7, 10),
+  (8, 6),
+  (9, 2),
+  (10, 13),
+  (11, 11),
+  (12, 6),
+  (13, 5),
+  (14, 2);
