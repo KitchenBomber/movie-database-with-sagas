@@ -22,9 +22,9 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     console.log('in the POST detail', req.body);
-    let query = `INSERT INTO "movies" ("title", "description")
-    VALUES ($1, $2)`;
-    pool.query(query, [req.body.title, req.body.description]).then(result => {
+    let query = `UPDATE "movies" SET ("title", "description")=($1, $2)
+     WHERE "id"=$3`;
+    pool.query(query, [req.body.title, req.body.description, req.body.id]).then(result => {
         res.sendStatus(200);
 
     }).catch(err => {

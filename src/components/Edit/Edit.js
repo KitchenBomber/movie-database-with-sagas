@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 export class Edit extends Component {
 
     state = {
+        id: this.props.reduxState.clickedReducer.id,
         title: this.props.reduxState.clickedReducer.title,
         description: this.props.reduxState.clickedReducer.description,
     }
