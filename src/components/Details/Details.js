@@ -6,7 +6,7 @@ export class Details extends Component {
     render() {
         return (
             <div>
-                <Link to="/"><button>HOME</button></Link>
+                <Link to="/"><button>BACK TO LIST</button></Link>
                 <Link to="/edit"><button>EDIT</button></Link>
 
                 

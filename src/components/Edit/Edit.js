@@ -7,12 +7,16 @@ export class Edit extends Component {
         return (
             <div>
                 <div>
-                <Link to="/details"><button>CANCEL</button></Link>
-                    <Link to="/"><button>HOME</button></Link>
+                    <Link to="/"><button>BACK TO LIST</button></Link>
+                    <Link to="/details"><button>CANCEL</button></Link>
                 </div>
-                <input type="text" placeholder={ this.props.reduxState.clickedReducer.title }></input>
-                <input type="text" placeholder={ this.props.reduxState.clickedReducer.description } size="250"></input>
-                <button>Submit Changes</button>
+                <div>
+                    <input type="text" placeholder={this.props.reduxState.clickedReducer.title}></input>
+                </div>
+                <textarea rows="5" cols="50" >{this.props.reduxState.clickedReducer.description}</textarea>
+                <div>
+                    <button>Submit Changes</button>
+                </div>
             </div>
         )
     }
