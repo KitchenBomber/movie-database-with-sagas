@@ -3,14 +3,17 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
     console.log('in the detail router', req.params.id);
     
-    let query = `SELECT "title", "description", "name" FROM "movies" 
+    let query = `SELECT "name" FROM "movies" 
     JOIN "linker" ON "movies"."id"="linker"."movie_id" 
-    JOIN "genres" ON "genres"."id"="linker"."genre_id" WHERE "title"=$1;`;
-    pool.query(query).then(result => {
+    JOIN "genres" ON "genres"."id"="linker"."genre_id" WHERE "movies"."id"=$1;`;
+
+    pool.query(query, [req.params.id]).then(result => {
         res.send(result.rows);
+        console.log(result.rows);
+        
     }).catch(err => {
         console.log(err);
         res.sendStatus(500)

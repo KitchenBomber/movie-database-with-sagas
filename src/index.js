@@ -34,9 +34,10 @@ function* fetchMovies(){
     }
 }
 function* fetchDetails(action){
+    console.log('in fetchDetails', action.payload);
+    let id = action.payload.id
     try {
-        
-        let detailsResponse = yield axios.get(`/api/details?movie=${action.payload.query}`);
+        let detailsResponse = yield axios.get(`/api/details/${id}`);
         yield put({ type: 'SET_GENRES', payload: detailsResponse.data });
     } catch (err) {
         console.log(err);
