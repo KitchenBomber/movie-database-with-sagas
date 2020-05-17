@@ -16,13 +16,11 @@ handleClick = () => {
 
     render() {
         return (
-               <tr>
-                <td>
+               <tr className="movieItemDisplay">
+                <td className="moviePoster">
                     <Link to="/details" ><img src={this.props.movieItem.poster} onClick={this.handleClick}></img>
                     </Link>
-                </td>
-           
-                <td>
+                </td><td className="movieInfo">
                     <h2>{this.props.movieItem.title}</h2>
                     <p>{this.props.movieItem.description}</p>
                 </td>

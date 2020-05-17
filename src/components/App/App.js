@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <HashRouter>
-          <h1>Blockbuster Video</h1>
+          <h1>Wiki-Movies</h1>
           {/* <button onClick={this.clickHandler}>Click Me</button> */}
           {/* <Route exact path="/" component={App}/> */}
          

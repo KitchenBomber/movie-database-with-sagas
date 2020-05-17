@@ -15,15 +15,16 @@ export class Details extends Component {
     render() {
         return (
             <div>
+                <div>
+                    <img className="detailMoviePoster" src={this.props.reduxState.clickedReducer.poster}></img>
+                </div>
                 <Link to="/"><button>BACK TO LIST</button></Link>
                 <Link to="/edit"><button>EDIT</button></Link>
-
-                
                 <h3>{this.props.reduxState.clickedReducer.title}</h3>
                 <ul>
                     {
                         this.props.reduxState.genres.map(item =>
-                            <li>{item.name}</li>)
+                            <li key={item.name}>{item.name}</li>)
                     }
                 </ul>
                 <p>{this.props.reduxState.clickedReducer.description}</p>

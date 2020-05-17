@@ -19,7 +19,7 @@ export class MovieList extends Component {
                 <table>
                     <tbody>
                     {this.props.reduxState.movies.map(movieItem =>
-                            <MovieItem movieItem={movieItem} />
+                        <MovieItem key={movieItem.id} movieItem={movieItem} />
                     )}
                     </tbody>
                 </table>

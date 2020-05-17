@@ -8,6 +8,7 @@ export class Edit extends Component {
         id: this.props.reduxState.clickedReducer.id,
         title: this.props.reduxState.clickedReducer.title,
         description: this.props.reduxState.clickedReducer.description,
+        poster: this.props.reduxState.clickedReducer.poster,
     }
 
         componentDidMount() {
@@ -37,6 +38,7 @@ export class Edit extends Component {
     handleClick = () => {
         console.log("in handleClick", this.state);
         this.props.dispatch({type: 'UPDATE', payload: this.state});
+        this.props.dispatch({ type: "RECORD_CLICK", payload: this.state});
         this.props.history.push('/details');
 
     }
