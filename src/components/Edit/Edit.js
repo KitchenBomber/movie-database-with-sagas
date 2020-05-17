@@ -37,6 +37,8 @@ export class Edit extends Component {
     handleClick = () => {
         console.log("in handleClick", this.state);
         this.props.dispatch({type: 'UPDATE', payload: this.state});
+        this.props.history.push('/details');
+
     }
     
     render() {
@@ -49,7 +51,7 @@ export class Edit extends Component {
                 <div>
                     <input type="text" onChange={this.handleChangeOne} placeholder={this.props.reduxState.clickedReducer.title}></input>
                 </div>
-                <textarea rows="5" cols="50" onChange={this.handleChangeTwo}>{this.props.reduxState.clickedReducer.description}</textarea>
+                <textarea rows="5" cols="50" onChange={this.handleChangeTwo} defaultValue={this.props.reduxState.clickedReducer.description}></textarea>
                 <div>
                     <button onClick={this.handleClick}>Submit Changes</button>
                 </div>
