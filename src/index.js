@@ -18,11 +18,22 @@ function* rootSaga() {
     // yield takeEvery('FETCH_GENRES', fetchGenres);
     yield takeEvery('FETCH_MOVIES', fetchMovies)
     yield takeEvery('DETAILS', fetchDetails)
+    yield takeEvery('UPDATE', changeDetails)
 }
 
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
+
+function* changeDetails(action){
+    try {
+        yield axios.post('/api/details', action.payload)
+        yield put ({ type: 'FETCH_MOVIES'})
+    }catch(err){
+        console.log(err); 
+    }
+
+}// end Change details, removed the /api from this one to make sure that was just taco
 
 function* fetchMovies(){
     try {

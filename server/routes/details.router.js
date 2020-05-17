@@ -18,8 +18,20 @@ router.get('/:id', (req, res) => {
         console.log(err);
         res.sendStatus(500)
     })
-})//Avatar is hard coded because req.query.movie is returning a string and the double quotes are making the SQL query think i want the title = to a column name.
-//once I can figure out how to strip the string down to text
+})//This is the Detail Get, it pulls back the genres for the selected movie to be mapped in Details
 
+router.post('/', (req, res) => {
+    console.log('in the POST detail', req.body);
+    let query = `INSERT INTO "movies" ("title", "description")
+    VALUES ($1, $2)`;
+    pool.query(query, [req.body.title, req.body.description]).then(result => {
+        res.sendStatus(200);
+
+    }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+        
+    })
+})// this is the post Router, it sends an updated title and description. right now it's trying to add a new item, i just need to get the movie ID and add a clause to make it overwrite.
 
 module.exports = router;

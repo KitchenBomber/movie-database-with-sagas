@@ -3,6 +3,15 @@ import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 
 export class Details extends Component {
+
+    // componentDidMount() {
+    //     let state = {
+    //         movieTitle: this.props.reduxState.clickedReducer.title,
+    //         movieDescription: this.props.reduxState.clickedReducer.description
+    //     }
+    //     console.log("in Details", state);
+    // }
+
     render() {
         return (
             <div>
