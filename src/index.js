@@ -35,9 +35,8 @@ function* fetchMovies(){
 }
 function* fetchDetails(action){
     try {
-        let title = action.payload;
-        title.replace(/['"]+/g, '');
-        let detailsResponse = yield axios.get(`/api/details?movie=${title.query}`);
+        
+        let detailsResponse = yield axios.get(`/api/details?movie=${action.payload.query}`);
         yield put({ type: 'SET_GENRES', payload: detailsResponse.data });
     } catch (err) {
         console.log(err);
@@ -65,15 +64,26 @@ const genres = (state = [], action) => {
     }
 }
 
+const clickedReducer = (state = [], action) => {
+    console.log('in clickedReducer', action.payload);
+    if (action.type === "RECORD_CLICK"){
+        return action.payload
+    }
+return state
+}
+
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        clickedReducer,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
 );
+
+
 
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);

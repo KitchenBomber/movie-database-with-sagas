@@ -8,6 +8,7 @@ handleClick = () => {
 
     console.log("clicky click" );
     this.props.dispatch({ type: "DETAILS", payload: { query: this.props.movieItem.title}});
+    this.props.dispatch({ type: "RECORD_CLICK", payload: this.props.movieItem });
     // this.props.history.push('/details')
     //route to details goes here
     

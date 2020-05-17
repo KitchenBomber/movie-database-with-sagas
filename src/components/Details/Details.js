@@ -6,8 +6,19 @@ export class Details extends Component {
     render() {
         return (
             <div>
+                <Link to="/"><button>HOME</button></Link>
                 <Link to="/edit"><button>EDIT</button></Link>
-                <h3>Details</h3>
+
+                
+                <h3>{this.props.reduxState.clickedReducer.title}</h3>
+                <ul>
+                    {
+                        this.props.reduxState.genres.map(item =>
+                            <li>{item.name}</li>)
+                    }
+                </ul>
+                <p>{this.props.reduxState.clickedReducer.description}</p>
+
             </div>
         )
     }

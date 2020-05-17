@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import MovieList from '../MovieList/MovieList';
 import Details from '../Details/Details';
 import Edit from '../Edit/Edit';
-import { HashRouter, Route, Link } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -28,17 +28,16 @@ class App extends Component {
           <h1>Blockbuster Video</h1>
           {/* <button onClick={this.clickHandler}>Click Me</button> */}
           {/* <Route exact path="/" component={App}/> */}
-          <Link to="/movies"><button>MOVIE INFORMATION</button></Link>
+         
 
-          <Route path="/movies"
+          <Route exact path="/"
             render={(props) => <MovieList {...props} dispatch={this.props.dispatch} />}
           />
           <Route path="/details"
             render={(props) => <Details {...props} dispatch={this.props.dispatch} />}
           />
-          <Route path="/edit"
-            render={(props) => <Edit {...props} dispatch={this.props.dispatch} />}
-          />
+          <Route path="/edit" component={Edit}/>
+            
 
         </HashRouter>
       </div>
