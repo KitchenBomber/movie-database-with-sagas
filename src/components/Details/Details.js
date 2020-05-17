@@ -27,7 +27,7 @@ export class Details extends Component {
                             <li key={item.name}>{item.name}</li>)
                     }
                 </ul>
-                <p>{this.props.reduxState.clickedReducer.description}</p>
+                <p className="descriptionParagraph">{this.props.reduxState.clickedReducer.description}</p>
 
             </div>
         )

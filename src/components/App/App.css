@@ -28,15 +28,13 @@ body {
   to { transform: rotate(360deg); }
 }
 
-table {
-    border-collapse: collapse;
-}
+
 
 .movieItemDisplay {
  background-color:rgb(252, 251, 251);
- padding-bottom: 10px;
+ padding-bottom: 25px;
  padding-top: 5px;
- margin-bottom: 10px;
+ 
 
 }
 
@@ -55,3 +53,10 @@ table {
   box-shadow: 5px 10px 8px #888888;
   margin-bottom: 10px;
 }
+
+.descriptionParagraph{
+  text-align: left;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
